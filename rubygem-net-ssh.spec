@@ -161,7 +161,6 @@ gem install --local --install-dir %{gembuilddir} --force %{SOURCE0}
 
 
 %doc %{gemdir}/doc/net-ssh-2.2.2
-%{gemdir}/cache/net-ssh-2.2.2.gem
 %{gemdir}/specifications/net-ssh-2.2.2.gemspec
 
 %changelog
