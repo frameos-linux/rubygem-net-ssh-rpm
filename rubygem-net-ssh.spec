@@ -171,6 +171,6 @@ gem install --local --install-dir %{gembuilddir} --force %{SOURCE0}
 * Tue Sep 18 2012 Sergio Rubio <rubiojr@frameos.org> - 2.2.2-2
 - regenerated spec file using gem2rpm
 
-* Fri Dec 21 2012 Sean P. Kane <spkane00@gmail.com> - 2.2.2-1
+* Mon Sep 17 2012 Sean P. Kane <spkane00@gmail.com> - 2.2.2-1
 - Initial version
 
