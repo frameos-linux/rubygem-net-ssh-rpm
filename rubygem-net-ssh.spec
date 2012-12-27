@@ -1,30 +1,32 @@
 # Generated from net-ssh-2.2.2.gem by gem2rpm -*- rpm-spec -*-
 %define rbname net-ssh
+%define version 2.2.2
+%define release 3
 
 Summary: Net::SSH: a pure-Ruby implementation of the SSH2 client protocol.
 Name: rubygem-%{rbname}
 
-Version: 2.2.2
-Release: 2
+Version: %{version}
+Release: %{release}
 Group: Development/Ruby
 License: Distributable
 URL: http://github.com/net-ssh/net-ssh
-Source0: http://rubygems.org/gems/%{rbname}-%{version}.gem
+Source0: %{rbname}-%{version}.gem
 # Make sure the spec template is included in the SRPM
+#Source1: rubygem-%{rbname}.spec.in
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Requires: ruby 
-Requires: rubygems 
+Requires: rubygems >= 1.8.10
 BuildRequires: ruby 
-BuildRequires: rubygems
+BuildRequires: rubygems >= 1.8.10
 BuildArch: noarch
-Provides: ruby(Net-ssh) = %{version}
+Provides: rubygem(net-ssh) = %{version}
 
 %define gemdir %(ruby -rubygems -e 'puts Gem::dir' 2>/dev/null)
 %define gembuilddir %{buildroot}%{gemdir}
 
 %description
 Net::SSH: a pure-Ruby implementation of the SSH2 client protocol.
-
 
 %prep
 %setup -T -c
@@ -159,13 +161,16 @@ gem install --local --install-dir %{gembuilddir} --force %{SOURCE0}
 
 
 %doc %{gemdir}/doc/net-ssh-2.2.2
+%{gemdir}/cache/net-ssh-2.2.2.gem
 %{gemdir}/specifications/net-ssh-2.2.2.gemspec
 
 %changelog
+* Thu Dec 27 2012 Sean P. Kane <spkane00@gmail.com> - 2.2.2-3
+- Merge
+
 * Tue Sep 18 2012 Sergio Rubio <rubiojr@frameos.org> - 2.2.2-2
 - regenerated spec file using gem2rpm
-- bumped release
 
-* Tue Sep 11 2012 Sean P. Kane <spkane00@gmail.com> - 2.2.2-1
-- Initial package
+* Fri Dec 21 2012 Sean P. Kane <spkane00@gmail.com> - 2.2.2-1
+- Initial version
 
